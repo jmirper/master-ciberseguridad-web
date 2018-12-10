@@ -56,9 +56,12 @@ public class Application extends Controller {
     }
 
     public static void doSetMark(String student, Integer mark) {
-        User u = User.loadUser(student);
-        u.setMark(mark);
-        u.save();
-        index();
+        User u = User.loadUser(student)        
+        //Correcion Juan Carlos Mira Perez
+        if (u != null){
+            u.setMark(mark);
+            u.save();
+            index();
+        }
     }
 }
