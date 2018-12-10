@@ -52,7 +52,10 @@ public class Application extends Controller {
 
     public static void setMark(String student) {
         User u = User.loadUser(student);
-        render(u);
+        //Correcion Juan Carlos Mira Perez
+        if (u != null){
+        	render(u);
+        }   
     }
 
     public static void doSetMark(String student, Integer mark) {
